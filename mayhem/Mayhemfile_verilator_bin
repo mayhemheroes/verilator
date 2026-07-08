@@ -1,0 +1,10 @@
+project: verilator
+target: verilator-bin
+
+# Sanitized file-input CLI via verilator_fuzz (open+exec launcher). The launcher performs an
+# explicit read of @@ for Mayhem smoketest compat; coverage comes from verilator_bin.
+cmds:
+  - cmd: /mayhem/verilator_fuzz @@
+    timeout: 30
+    env:
+      MFUZZ_COMPAT_LEVEL: "2"

@@ -1,0 +1,8 @@
+project: verilator
+target: vl-dbg-msgf
+
+# libFuzzer harness exercising the Verilated runtime's VL_DBG_MSGF() formatter
+# (include/verilated.cpp), compiled + linked with the project sanitized.
+cmds:
+  - cmd: /mayhem/fuzz_VL_DBG_MSGF
+    libfuzzer: true
